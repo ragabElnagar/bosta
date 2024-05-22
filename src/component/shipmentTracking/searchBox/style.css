@@ -24,3 +24,8 @@
 .dir{
   direction: ltr;
 }
+
+.error{
+  color: red;
+  font-size: 15px;
+}

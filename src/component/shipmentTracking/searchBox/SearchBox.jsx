@@ -22,11 +22,16 @@ function SearchBox(props) {
   const lang = i18n.language;
 
   const [trackId, setTrackId] = useState("");
+  const [hasValue, setHasValue] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    getTrack(trackId);
-    navigate(`/shipment-tracking-details/${trackId}`);
+    setHasValue(true);
+    if (trackId.length > 0) {
+      setHasValue(false);
+      getTrack(trackId);
+      navigate(`/shipment-tracking-details/${trackId}`);
+    }
   };
 
   useEffect(() => {
@@ -60,6 +65,9 @@ function SearchBox(props) {
             ),
           }}
         />
+        {hasValue && (
+          <Typography className="error">{t("pleas enter track number")}</Typography>
+        )}
       </form>
     </Paper>
   );
