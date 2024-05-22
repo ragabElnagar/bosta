@@ -1,0 +1,43 @@
+.container{
+    padding:0 30px;
+    margin-bottom: 30px;
+}
+.trackContainer{
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.trackBox{
+    display: flex;
+    flex-direction: column;   
+    text-align: left;
+}
+.trackTitle{
+    font-size: 15px;
+    color: #ccc;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+}
+
+.trackSubTitle{
+    font-weight: 700 !important;
+}
+.css-1hv8oq8-MuiStepLabel-label.Mui-active,.css-1hv8oq8-MuiStepLabel-label.Mui-completed,.css-1hv8oq8-MuiStepLabel-label{
+    font-weight: 700 !important;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed,.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active{
+        color: red !important;
+}
+
+.css-zpcwqm-MuiStepConnector-root{
+    left: calc(-53% + 20px) !important;
+    right: calc(47% + 20px) !important;
+}
+.css-z7uhs0-MuiStepConnector-line{
+    border-color: red !important;
+    border-top-width: 4px !important;
+}
+.hr{
+    margin: 25px 0;
+}

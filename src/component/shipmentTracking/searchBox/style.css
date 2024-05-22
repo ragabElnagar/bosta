@@ -1,0 +1,26 @@
+.paper {
+  width: fit-content !important;
+  padding: 15px;
+  margin: 35px auto;
+  position: relative;
+}
+.title {
+  margin: 13px 0 !important;
+}
+.MuiInputBase-root {
+  padding-right: 0 !important;
+  overflow: hidden;
+}
+.MuiInputAdornment-root {
+  background-color: red;
+  max-height: 4.3em !important;
+  height: 54px !important;
+  padding: 0 9px;
+}
+.iconBtn {
+  color: white;
+}
+
+.dir{
+  direction: ltr;
+}

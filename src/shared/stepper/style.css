@@ -1,0 +1,46 @@
+.stepperAr{
+    .css-n7tliy-MuiStep-root{
+        .MuiStepConnector-root{
+                color:red !important;
+                left: calc(50% + 20px) !important;
+                right: calc(-50% + 20px) !important;
+            }
+    }
+}
+.stepper-container-rtl {
+    direction: rtl !important;
+  }
+  
+  .stepper-container-ltr {
+    direction: ltr !important;
+  }
+  
+  .iconAr {
+    transform: scaleX(-1);
+  }
+    .css-1hv8oq8-MuiStepLabel-label{
+        font-family: 'Cairo', sans-serif !important;
+  }
+
+  .rotateIconRtl{
+    transform:rotateY(-180deg);
+  }
+
+  @media (max-width: 600px) {
+    .MuiStepLabel-label {
+      font-size: 0.75rem;
+    }
+  
+    .MuiSvgIcon-root {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .MuiStep-root {
+      padding: 8px;
+    }
+  
+    .MuiStepper-root {
+      padding: 12px 0;
+    }
+  }

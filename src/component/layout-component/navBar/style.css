@@ -1,0 +1,41 @@
+.AppBar {
+  background-color: transparent !important;
+  padding: 10px;;
+}
+.NavRtl{
+  direction: rtl;
+}
+.NavLtr{
+  direction: ltr;
+}
+.tabs {
+  color: black !important;
+  font-weight: 700 !important;
+}
+.langBtn{
+    color: red !important;
+  font-weight: 600 !important;
+}
+.marginBtn{
+    margin: 0 10px !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+    color: red !important;
+}
+.flexBox{
+    display: flex;
+}
+.tabsBox{
+   margin: 0 4%;
+}
+.trackingBtn{
+  display: flex !important;
+}
+.logo{
+  cursor: pointer;
+}
+
+.active{
+  color: red !important;
+}
