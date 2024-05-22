@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage } from 'i18next';
 import logoEN from '../../../assets/enLogo.svg';
@@ -18,8 +18,8 @@ import './style.css';
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [activeTab, setActiveTab] = useState('/');
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
 
@@ -32,7 +32,6 @@ function NavBar() {
   };
 
   const handleNavigate = (path) => {
-    setActiveTab(path);
     navigate(path);
     setAnchorElNav(null);
   };
@@ -42,6 +41,10 @@ function NavBar() {
     const newLang = lang === 'en' ? 'ar' : 'en';
     changeLanguage(newLang);
   };
+
+  const isTrackingShipmentActive =
+    location.pathname === '/shipment-tracking' ||
+    /^\/shipment-tracking-details\/\d+$/.test(location.pathname);
 
   return (
     <AppBar position="static" className={`AppBar ${lang === 'en' ? 'NavRtl' : 'NavLtr'}`}>
@@ -77,31 +80,31 @@ function NavBar() {
               }}
               className="tabs"
             >
-              <MenuItem onClick={() => handleNavigate('/')}>
-                <Typography textAlign="center" className={activeTab === '/' ? 'active' : ''}>
+              <MenuItem className='menuItem' onClick={() => handleNavigate('/')}>
+                <Typography textAlign="center" className={location.pathname === '/' ? 'active' : ''}>
                   {t('home')}
                 </Typography>
               </MenuItem>
               <hr className="MuiDivider-root MuiDivider-fullWidth muiltr-39bbo6" />
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem className='menuItem' onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">{t('Price')}</Typography>
               </MenuItem>
               <hr className="MuiDivider-root MuiDivider-fullWidth muiltr-39bbo6" />
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem className='menuItem' onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">{t('Contact_Sales')}</Typography>
               </MenuItem>
               <hr className="MuiDivider-root MuiDivider-fullWidth muiltr-39bbo6" />
-              <MenuItem onClick={() => handleNavigate('/shipment-tracking')}>
-                <Typography textAlign="center" className={activeTab === '/shipment-tracking' ? 'active' : ''}>
+              <MenuItem className='menuItem' onClick={() => handleNavigate('/shipment-tracking')}>
+                <Typography textAlign="center" className={isTrackingShipmentActive ? 'active' : ''}>
                   {t('Tracking_Shipment')}
                 </Typography>
               </MenuItem>
               <hr className="MuiDivider-root MuiDivider-fullWidth muiltr-39bbo6" />
-              <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem className='menuItem' onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">{t('Sign_in')}</Typography>
               </MenuItem>
               <hr className="MuiDivider-root MuiDivider-fullWidth muiltr-39bbo6" />
-              <MenuItem onClick={handelChangeLanguage}>
+              <MenuItem className='menuItem' onClick={handelChangeLanguage}>
                 <Typography textAlign="center">{t('English')}</Typography>
               </MenuItem>
             </Menu>
@@ -118,7 +121,7 @@ function NavBar() {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, display: 'block' }}
-                className={`tabs marginBtn ${activeTab === '/sign-in' ? 'active' : ''}`}
+                className={`tabs marginBtn ${location.pathname === '/sign-in' ? 'active' : ''}`}
               >
                 {t('Sign_in')}
               </Button>
@@ -129,7 +132,7 @@ function NavBar() {
               <Button
                 onClick={() => handleNavigate('/shipment-tracking')}
                 sx={{ my: 2, display: 'block' }}
-                className={`tabs marginBtn ${activeTab === '/shipment-tracking' ? 'active' : ''}`}
+                className={`tabs marginBtn ${isTrackingShipmentActive ? 'active' : ''}`}
               >
                 {t('Tracking_Shipment')}
               </Button>
@@ -138,21 +141,21 @@ function NavBar() {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, display: 'block' }}
-                className={`tabs ${activeTab === '/contact-sales' ? 'active' : ''}`}
+                className={`tabs ${location.pathname === '/contact-sales' ? 'active' : ''}`}
               >
                 {t('Contact_Sales')}
               </Button>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, display: 'block' }}
-                className={`tabs ${activeTab === '/prices' ? 'active' : ''}`}
+                className={`tabs ${location.pathname === '/prices' ? 'active' : ''}`}
               >
                 {t('Prices')}
               </Button>
               <Button
                 onClick={() => handleNavigate('/')}
                 sx={{ my: 2, display: 'block' }}
-                className={`tabs ${activeTab === '/' ? 'active' : ''}`}
+                className={`tabs ${location.pathname === '/' ? 'active' : ''}`}
               >
                 {t('home')}
               </Button>

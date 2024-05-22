@@ -1,41 +1,45 @@
 .AppBar {
   background-color: transparent !important;
-  padding: 10px;;
+  padding: 10px;
 }
-.NavRtl{
+.NavRtl {
   direction: rtl;
 }
-.NavLtr{
+.NavLtr {
   direction: ltr;
 }
 .tabs {
   color: black !important;
   font-weight: 700 !important;
 }
-.langBtn{
-    color: red !important;
+.tabs:hover,.menuItem:hover {
+  color: red !important;
+  background-color:transparent !important;
+}
+.langBtn {
+  color: red !important;
   font-weight: 600 !important;
 }
-.marginBtn{
-    margin: 0 10px !important;
+.marginBtn {
+  margin: 0 10px !important;
 }
 
-.css-hip9hq-MuiPaper-root-MuiAppBar-root{
-    color: red !important;
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  color: red !important;
 }
-.flexBox{
-    display: flex;
+.flexBox {
+  display: flex;
 }
-.tabsBox{
-   margin: 0 4%;
+.tabsBox {
+  margin: 0 4%;
 }
-.trackingBtn{
+.trackingBtn {
   display: flex !important;
 }
-.logo{
+.logo {
   cursor: pointer;
 }
 
-.active{
+.active {
   color: red !important;
 }
