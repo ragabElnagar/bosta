@@ -1,5 +1,5 @@
 .stepperAr{
-    .css-n7tliy-MuiStep-root{
+    .MuiStep-root{
         .MuiStepConnector-root{
                 color:red !important;
                 left: calc(50% + 20px) !important;
