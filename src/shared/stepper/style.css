@@ -1,7 +1,9 @@
-.css-fwy5rc{
-                color:red !important;
-                left: calc(50% + 20px) !important;
-                right: calc(-50% + 20px) !important;
+.stepperAr{
+  .MuiStepConnector-root{
+                  color:red !important;
+                  left: calc(50% + 20px) !important;
+                  right: calc(-50% + 20px) !important;
+  }
 }
 .stepper-container-rtl {
     direction: rtl !important;
