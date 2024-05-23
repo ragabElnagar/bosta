@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   IconButton,
   InputAdornment,
@@ -22,25 +22,25 @@ function SearchBox(props) {
   const lang = i18n.language;
 
   const [trackId, setTrackId] = useState("");
-  const [hasValue, setHasValue] = useState(false);
+  const [showError, setShowError] = useState(false);
 
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     e.preventDefault();
-    setHasValue(true);
+    setShowError(true);
     if (trackId.length > 0) {
-      setHasValue(false);
+      setShowError(false);
       getTrack(trackId);
       navigate(`/shipment-tracking-details/${trackId}`);
     }
-  };
+  }, [trackId, getTrack, navigate]);
 
   useEffect(() => {
     if (id) {
       getTrack(id);
     }
-  }, [id]);
+  }, [id, getTrack]);
 
-  const handelChange = (e) => {
+  const handleTrackIdChange = (e) => {
     const newValue = e.target.value.replace(/\D/g, "");
     setTrackId(newValue);
   };
@@ -54,7 +54,7 @@ function SearchBox(props) {
           variant="outlined"
           type="text"
           value={trackId}
-          onChange={handelChange}
+          onChange={handleTrackIdChange}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -65,7 +65,7 @@ function SearchBox(props) {
             ),
           }}
         />
-        {hasValue && (
+        {showError && (
           <Typography className="error">{t("pleas enter track number")}</Typography>
         )}
       </form>

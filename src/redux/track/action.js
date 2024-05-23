@@ -20,18 +20,14 @@ export const fetchTrackFail = (error) => {
     payload: error,
   };
 };
-
 export const fetchTrackData = (trackId) => {
-  return(dispatch) => {
+  return async (dispatch) => {
     dispatch(fetchTrack());
-    BOSTA_API.get(`/shipments/track/${trackId}`)
-      .then((res) => {
-        dispatch(fetchTrackSuccess(res.data));
-      })
-      .catch((error) => {
-        dispatch(fetchTrackFail(error?.response?.data?.error));
-      });
+    try {
+      const res = await BOSTA_API.get(`/shipments/track/${trackId}`);
+      dispatch(fetchTrackSuccess(res.data));
+    } catch (error) {
+      dispatch(fetchTrackFail(error?.response?.data?.error));
+    }
   };
 };
-
-
