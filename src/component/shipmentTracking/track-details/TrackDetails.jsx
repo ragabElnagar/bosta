@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBox from "../searchBox/SearchBox";
-import { Grid, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "./style.css";
 import CustomStepper from "../../../shared/stepper/CustomStepper";
 import ShipmentPath from "../shipment-path/ShipmentPath";

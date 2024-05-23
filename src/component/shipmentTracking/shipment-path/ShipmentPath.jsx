@@ -6,6 +6,8 @@ import {
   dateFormateWithTime,
 } from "../../../utils/common/dateFormate";
 import { useTranslation } from "react-i18next";
+import "./style.css";
+
 
 function ShipmentPath(props) {
   const { data } = props;
