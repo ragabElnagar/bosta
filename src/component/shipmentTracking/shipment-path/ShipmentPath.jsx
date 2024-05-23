@@ -20,7 +20,7 @@ function ShipmentPath(props) {
           <Box className="trackBox">
             <Typography className="trackTitle">
               {t("TRACKING_NUMBER")}
-              {data.TrackingNumber ? data.TrackingNumber : "NNN"}
+              {data.TrackingNumber ? data.TrackingNumber : t("NOT_DETERMINE")}
             </Typography>
             <Typography className="trackSubTitle">
               {t(data.CurrentStatus?.state)}
@@ -33,7 +33,7 @@ function ShipmentPath(props) {
             <Typography className="trackSubTitle">
               {data.CurrentStatus?.timestamp
                 ? dateFormateWithTime(data.CurrentStatus?.timestamp, t)
-                : "NNN"}
+                : t("NOT_DETERMINE")}
             </Typography>
           </Box>
         </Grid>
@@ -50,7 +50,7 @@ function ShipmentPath(props) {
             <Typography className="trackTitle">{t("PROMISE_DATE")}</Typography>
             <Typography className="trackSubTitle">
               {" "}
-              {data.PromisedDate ? dateFormate(data.PromisedDate, t) : "NNN"}
+              {data.PromisedDate ? dateFormate(data.PromisedDate, t) : t("NOT_DETERMINE")}
             </Typography>
           </Box>
         </Grid>

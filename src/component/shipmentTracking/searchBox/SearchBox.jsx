@@ -30,7 +30,7 @@ function SearchBox(props) {
     if (trackId.length > 0) {
       setShowError(false);
       getTrack(trackId);
-      navigate(`/shipment-tracking-details/${trackId}`);
+      navigate(`/shipment-tracking-details/${trackId}`,{replace:true});
     }
   }, [trackId, getTrack, navigate]);
 

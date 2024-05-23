@@ -50,13 +50,13 @@ function CustomTable(props) {
                 {item.hub ? t(item.hub) : t("NOT_DETERMINE")}
               </StyledTableCell>
               <StyledTableCell  align={isRtl ? "right" : "left"}>
-                {item.timestamp ? dateFormateWithoutDay(item.timestamp) : "NNN"}
+                {item.timestamp ? dateFormateWithoutDay(item.timestamp) : t("NOT_DETERMINE")}
               </StyledTableCell>
               <StyledTableCell  align={isRtl ? "right" : "left"}>
-                {item.timestamp ? getTime(item.timestamp, t) : "NNN"}
+                {item.timestamp ? getTime(item.timestamp, t) : t("NOT_DETERMINE")}
               </StyledTableCell>
               <StyledTableCell  align={isRtl ? "right" : "left"}>
-                {item.state ? t(item.state) : "NNN"}
+                {item.state ? t(item.state) : t("NOT_DETERMINE")}
               </StyledTableCell>
             </TableRow>
           ))}
