@@ -88,12 +88,6 @@ const CustomStepper = ({ step, currentStatus }) => {
   const lang = i18n.language;
   const isRtl = lang === "ar";
 
-  const theme = createTheme({
-    direction: isRtl ? "rtl" : "ltr",
-    typography: {
-      fontFamily: 'Cairo, sans-serif',
-    },
-  });
 
   const steps = [
     t("YOUR_SHIPMENT_IS_CREATED"),
@@ -103,7 +97,6 @@ const CustomStepper = ({ step, currentStatus }) => {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
       <div>
         <Stepper alternativeLabel activeStep={step} className={isRtl ? "stepperAr" : ""} connector={<ColorlibConnector currentStatus={currentStatus} />}>
           {steps.map((label, index) => (
@@ -115,7 +108,6 @@ const CustomStepper = ({ step, currentStatus }) => {
           ))}
         </Stepper>
       </div>
-    </ThemeProvider>
   );
 };
 

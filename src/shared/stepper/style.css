@@ -16,9 +16,6 @@
   .iconAr {
     transform: scaleX(-1);
   }
-    .css-1hv8oq8-MuiStepLabel-label{
-        font-family: 'Cairo', sans-serif !important;
-  }
 
   .rotateIconRtl{
     transform:rotateY(-180deg);

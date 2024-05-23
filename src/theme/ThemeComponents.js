@@ -63,7 +63,7 @@ const theme = createTheme({
     MuiStepLabel: {
       styleOverrides: {
         label: {
-          fontFamily: 'inherit',
+          fontFamily: 'Cairo',
         },
       },
     },
