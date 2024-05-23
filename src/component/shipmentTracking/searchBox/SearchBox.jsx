@@ -29,16 +29,14 @@ function SearchBox(props) {
     setShowError(true);
     if (trackId.length > 0) {
       setShowError(false);
-      getTrack(trackId);
-      navigate(`/shipment-tracking-details/${trackId}`,{replace:true});
+      navigate(`/shipment-tracking-details/${trackId}`);
     }
   }, [trackId, getTrack, navigate]);
 
   useEffect(() => {
-    if (id) {
       getTrack(id);
-    }
-  }, [id, getTrack]);
+      setTrackId(id);
+  }, [id]);
 
   const handleTrackIdChange = (e) => {
     const newValue = e.target.value.replace(/\D/g, "");
